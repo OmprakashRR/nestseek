@@ -946,6 +946,28 @@ a {
     vertical-align: super;
 }
 
+/* === Beta Banner === */
+.beta-banner {
+    background: linear-gradient(90deg, #1a73e8, #00c896);
+    color: white;
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.beta-tag {
+    background: #ff6b35;
+    color: white;
+    font-size: 0.6rem;
+    padding: 2px 6px;
+    border-radius: 4px;
+    vertical-align: super;
+    margin-left: 4px;
+    letter-spacing: 1px;
+}
+
 /* === Notification Items === */
 .notification-item {
     background: var(--white);
@@ -954,32 +976,182 @@ a {
     padding: 16px;
     margin-bottom: 8px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s;
 }
 
 .notification-item.unread {
     background: var(--primary-light);
     border-color: var(--primary);
+    border-left: 4px solid var(--primary);
 }
 
 .notification-item:hover {
-    background: #f0f0f0;
+    box-shadow: var(--shadow);
+}
+
+.notif-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.notif-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.notif-header-text {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .notif-title {
     font-weight: 600;
-    margin-bottom: 4px;
+    font-size: 0.95rem;
+}
+
+.notif-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 0 0 36px;
+}
+
+.notification-item.expanded .notif-body {
+    max-height: 300px;
+    padding: 12px 0 0 36px;
 }
 
 .notif-message {
-    color: var(--text-light);
+    color: var(--text);
     font-size: 0.9rem;
-    margin-bottom: 4px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    white-space: pre-wrap;
 }
 
 .notif-time {
     color: var(--text-light);
     font-size: 0.78rem;
+    flex-shrink: 0;
+}
+
+.notif-contact-hint {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-top: 4px;
+}
+
+.notif-action {
+    margin-top: 8px;
+}
+
+.notif-action a {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* === Guide Page === */
+.guide-section {
+    margin-bottom: 40px;
+}
+
+.guide-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--primary);
+    display: inline-block;
+}
+
+.guide-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.guide-step {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: var(--bg);
+    border-radius: var(--radius-sm);
+    border-left: 4px solid var(--primary);
+}
+
+.guide-step-num {
+    width: 32px;
+    height: 32px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.guide-step strong {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.guide-step p, .guide-step ul {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.guide-step ul {
+    margin-top: 4px;
+    padding-left: 20px;
+}
+
+.guide-step li {
+    margin-bottom: 2px;
+}
+
+/* Contact Explainer */
+.contact-explainer {
+    padding: 16px;
+}
+
+.contact-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-top: 16px;
+}
+
+.contact-flow-item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.contact-flow-item ul {
+    margin-top: 4px;
+    padding-left: 20px;
+}
+
+.contact-flow-arrow {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--primary);
+    font-weight: 700;
 }
 
 /* === Dashboard Sections === */

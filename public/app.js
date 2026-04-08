@@ -456,16 +456,45 @@ async function loadNotifications() {
         }
 
         empty.style.display = 'none';
-        container.innerHTML = data.notifications.map(n => `
-            <div class="notification-item ${n.read ? '' : 'unread'}" onclick="markNotifRead('${n.id}', this)">
-                <div class="notif-title">${escapeHtml(n.title)}</div>
-                <div class="notif-message">${escapeHtml(n.message)}</div>
-                <div class="notif-time">${timeAgo(n.created_at)}</div>
-            </div>
-        `).join('');
+        container.innerHTML = data.notifications.map(n => {
+            const typeIcon = {
+                'offer': '&#128233;', 'match': '&#127919;', 'accepted': '&#9989;',
+                'declined': '&#10060;', 'default': '&#128276;'
+            };
+            const icon = typeIcon[n.type] || typeIcon['default'];
+
+            // Check if message has contact details (email pattern)
+            const hasContact = n.message && n.message.includes('@');
+            const actionBtn = n.type === 'offer' && !hasContact
+                ? `<div class="notif-action"><a href="#" onclick="event.stopPropagation();showPage('dashboard')">View in Dashboard &rarr;</a></div>`
+                : n.type === 'match'
+                ? `<div class="notif-action"><a href="#" onclick="event.stopPropagation();showPage('browse-needs')">Browse Properties &rarr;</a></div>`
+                : '';
+
+            return `
+                <div class="notification-item ${n.read ? '' : 'unread'}" onclick="toggleNotifExpand(this);markNotifRead('${n.id}', this)">
+                    <div class="notif-header">
+                        <span class="notif-icon">${icon}</span>
+                        <div class="notif-header-text">
+                            <div class="notif-title">${escapeHtml(n.title)}</div>
+                            <div class="notif-time">${timeAgo(n.created_at)}</div>
+                        </div>
+                    </div>
+                    <div class="notif-body">
+                        <div class="notif-message">${escapeHtml(n.message)}</div>
+                        ${hasContact ? '<div class="notif-contact-hint">Contact details above &mdash; save them!</div>' : ''}
+                        ${actionBtn}
+                    </div>
+                </div>
+            `;
+        }).join('');
     } catch (err) {
         console.error('Failed to load notifications:', err);
     }
+}
+
+function toggleNotifExpand(el) {
+    el.classList.toggle('expanded');
 }
 
 async function markNotifRead(id, el) {

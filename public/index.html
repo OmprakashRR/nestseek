@@ -7,14 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Beta Banner -->
+    <div class="beta-banner">
+        BETA &mdash; NestSeek is in early access. Free to use, your feedback shapes the product!
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo" onclick="showPage('home')">
-                <span class="logo-icon">&#9978;</span> NestSeek
+                <span class="logo-icon">&#9978;</span> NestSeek <span class="beta-tag">BETA</span>
             </a>
             <div class="nav-links">
                 <a href="#" onclick="showPage('home')">Home</a>
+                <a href="#" onclick="showPage('guide')">How It Works</a>
                 <a href="#" onclick="showPage('post-need')">I Need a Place</a>
                 <a href="#" onclick="showPage('browse-needs')">I Have a Place</a>
                 <a href="#" onclick="showPage('list-property')">List Property</a>
@@ -51,6 +57,11 @@
                         <span class="hero-card-btn">Browse Tenants &rarr;</span>
                     </div>
                 </div>
+                <div style="margin-top:24px;">
+                    <a href="#" onclick="showPage('guide')" style="color:#7df3c8;font-weight:600;font-size:1.05rem;">
+                        See how it works (step-by-step guide) &rarr;
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -70,7 +81,7 @@
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>Connect &amp; Move In</h3>
-                    <p>Accept an offer, exchange details, and arrange everything directly.</p>
+                    <p>Accept an offer and get each other's email and phone. Arrange everything directly.</p>
                 </div>
             </div>
         </div>
@@ -107,6 +118,143 @@
                 <button class="btn btn-primary" onclick="showPage('list-property')">List Your Property</button>
             </div>
         </div>
+
+        <!-- RTB Explainer -->
+        <div class="section">
+            <div class="sublet-content">
+                <h2>RTB Compliance &mdash; What It Means</h2>
+                <p>
+                    The <strong>Residential Tenancies Board (RTB)</strong> is Ireland's regulator for the rental sector.
+                    NestSeek helps protect both landlords and tenants:
+                </p>
+                <ul class="sublet-benefits">
+                    <li><strong>For permanent rentals:</strong> Landlords must confirm RTB registration before listing. We block listings without it.</li>
+                    <li><strong>For temporary sublets:</strong> Short stays under 6 months are typically licence agreements, not tenancies, so RTB registration is not required.</li>
+                    <li><strong>Rent Pressure Zones:</strong> Most of Dublin has rent increase caps (2% per year). We inform landlords about this.</li>
+                    <li><strong>Tenant protection:</strong> You can verify a landlord's RTB number at <strong>rtb.ie</strong> before committing.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Guide Page -->
+    <section id="page-guide" class="page">
+        <div class="form-container" style="max-width:800px;">
+            <h2>How NestSeek Works &mdash; Step by Step</h2>
+            <p class="form-subtitle">A complete guide for tenants and property owners.</p>
+
+            <div class="guide-section">
+                <h3>For Tenants (I Need a Place)</h3>
+                <div class="guide-steps">
+                    <div class="guide-step">
+                        <div class="guide-step-num">1</div>
+                        <div>
+                            <strong>Create an account</strong>
+                            <p>Click "Login" &rarr; "Register" tab. Enter your name, email, phone, occupation, and password. You'll get a verification email.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-num">2</div>
+                        <div>
+                            <strong>Post what you need</strong>
+                            <p>Click "I Need a Place". Fill in:</p>
+                            <ul>
+                                <li><strong>Type:</strong> Temporary (1-6 months) or Permanent (6+ months)</li>
+                                <li><strong>Areas:</strong> Type each area and press Enter (e.g. "Dublin 2", "Rathmines")</li>
+                                <li><strong>Dates:</strong> When you need to move in/out</li>
+                                <li><strong>Budget:</strong> Your min-max range per month</li>
+                                <li><strong>Room type:</strong> Single room, studio, apartment, etc.</li>
+                                <li><strong>Preferences:</strong> Furnished, WiFi, parking, etc.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-num">3</div>
+                        <div>
+                            <strong>Wait for offers</strong>
+                            <p>Property owners browse your need and send offers. You'll see them in your <strong>Dashboard</strong> and get a <strong>notification</strong>. An email is also sent to you.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-num">4</div>
+                        <div>
+                            <strong>Accept or decline</strong>
+                            <p>In your Dashboard, each offer shows the owner's proposed rent and message. Click <strong>"Accept"</strong> to proceed or <strong>"Decline"</strong> to pass.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-num">5</div>
+                        <div>
+                            <strong>Get contact details</strong>
+                            <p>When you accept, <strong>both sides get each other's email and phone number</strong> via notifications and email. You can then arrange viewings, deposits, and move-in directly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-section">
+                <h3>For Property Owners (I Have a Place)</h3>
+                <div class="guide-steps">
+                    <div class="guide-step">
+                        <div class="guide-step-num">1</div>
+                        <div>
+                            <strong>Create an account</strong>
+                            <p>Same as above &mdash; register with your details.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-num">2</div>
+                        <div>
+                            <strong>Option A: Browse tenant needs</strong>
+                            <p>Click "I Have a Place" to see everyone looking for accommodation. Filter by type, area, room, and budget. Click <strong>"Make an Offer"</strong> on any need that matches your place.</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-num">3</div>
+                        <div>
+                            <strong>Option B: List your property</strong>
+                            <p>Click "List Property" to post your place. The system <strong>automatically matches</strong> it with tenants who need your area, dates, and budget range &mdash; and notifies them.</p>
+                            <p><strong>For permanent rentals:</strong> You must confirm your RTB registration number before listing (Irish legal requirement).</p>
+                        </div>
+                    </div>
+                    <div class="guide-step">
+                        <div class="guide-step-num">4</div>
+                        <div>
+                            <strong>Wait for acceptance</strong>
+                            <p>If a tenant accepts your offer, you'll get a notification and email with <strong>their contact details</strong> (email and phone). You can then arrange everything directly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guide-section">
+                <h3>How Contact Exchange Works</h3>
+                <div class="contact-explainer">
+                    <p>NestSeek protects your privacy until you're ready:</p>
+                    <div class="contact-flow">
+                        <div class="contact-flow-item">
+                            <strong>Before accepting:</strong> Your email and phone are hidden. Only your name and occupation are visible.
+                        </div>
+                        <div class="contact-flow-arrow">&darr;</div>
+                        <div class="contact-flow-item">
+                            <strong>After accepting an offer:</strong> Both the tenant and owner receive each other's <strong>email address</strong> and <strong>phone number</strong> via:
+                            <ul>
+                                <li>In-app notification (check Notifications page)</li>
+                                <li>Email to both parties</li>
+                            </ul>
+                        </div>
+                        <div class="contact-flow-arrow">&darr;</div>
+                        <div class="contact-flow-item">
+                            <strong>From there:</strong> Arrange viewings, agree on terms, and move in &mdash; all directly between you.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin-top:32px;">
+                <button class="btn btn-primary" onclick="showPage('login')">Get Started &mdash; It's Free</button>
+            </div>
+        </div>
     </section>
 
     <!-- Login / Register Page -->
@@ -117,7 +265,6 @@
                 <button class="toggle-btn" id="tab-register" onclick="showAuthTab('register')">Register</button>
             </div>
 
-            <!-- Login Form -->
             <form id="login-form" onsubmit="handleLogin(event)">
                 <div class="form-group">
                     <label for="login-email">Email</label>
@@ -130,7 +277,6 @@
                 <button type="submit" class="btn btn-primary btn-full">Login</button>
             </form>
 
-            <!-- Register Form -->
             <form id="register-form" onsubmit="handleRegister(event)" style="display:none;">
                 <div class="form-row">
                     <div class="form-group">
@@ -175,44 +321,26 @@
                 <div class="form-group">
                     <label>Type of Accommodation</label>
                     <div class="toggle-group">
-                        <button type="button" class="toggle-btn active" onclick="setRentalType('temporary', this)">
-                            Temporary (1-6 months)
-                        </button>
-                        <button type="button" class="toggle-btn" onclick="setRentalType('permanent', this)">
-                            Permanent (6+ months)
-                        </button>
+                        <button type="button" class="toggle-btn active" onclick="setRentalType('temporary', this)">Temporary (1-6 months)</button>
+                        <button type="button" class="toggle-btn" onclick="setRentalType('permanent', this)">Permanent (6+ months)</button>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="areas">Preferred Areas *</label>
                     <div class="chip-input" id="area-chips">
-                        <input type="text" id="area-input" placeholder="Type an area and press Enter (e.g. Dublin 2, Rathmines)"
-                               onkeydown="addChip(event, 'area')">
+                        <input type="text" id="area-input" placeholder="Type an area and press Enter (e.g. Dublin 2, Rathmines)" onkeydown="addChip(event, 'area')">
                     </div>
                     <small>Press Enter after each area</small>
                 </div>
-
                 <div id="date-fields">
                     <div class="form-row">
-                        <div class="form-group">
-                            <label for="move-in">Move-in Date *</label>
-                            <input type="date" id="move-in" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="move-out">Move-out Date *</label>
-                            <input type="date" id="move-out" required>
-                        </div>
+                        <div class="form-group"><label for="move-in">Move-in Date *</label><input type="date" id="move-in" required></div>
+                        <div class="form-group"><label for="move-out">Move-out Date *</label><input type="date" id="move-out" required></div>
                     </div>
                 </div>
-
                 <div id="permanent-date-field" style="display:none;">
-                    <div class="form-group">
-                        <label for="perm-move-in">Earliest Move-in Date *</label>
-                        <input type="date" id="perm-move-in">
-                    </div>
+                    <div class="form-group"><label for="perm-move-in">Earliest Move-in Date *</label><input type="date" id="perm-move-in"></div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-group">
                         <label for="budget-min">Budget (per month) *</label>
@@ -226,17 +354,13 @@
                         <label for="room-type">Room Type *</label>
                         <select id="room-type" required>
                             <option value="">Select...</option>
-                            <option value="single-room">Single Room</option>
-                            <option value="double-room">Double Room</option>
-                            <option value="shared-room">Shared Room</option>
-                            <option value="studio">Studio</option>
-                            <option value="1bed-apartment">1 Bed Apartment</option>
-                            <option value="2bed-apartment">2 Bed Apartment</option>
+                            <option value="single-room">Single Room</option><option value="double-room">Double Room</option>
+                            <option value="shared-room">Shared Room</option><option value="studio">Studio</option>
+                            <option value="1bed-apartment">1 Bed Apartment</option><option value="2bed-apartment">2 Bed Apartment</option>
                             <option value="house">Entire House</option>
                         </select>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label>Preferences</label>
                     <div class="checkbox-group">
@@ -248,12 +372,10 @@
                         <label class="checkbox-label"><input type="checkbox" id="pref-transport"> Near Public Transport</label>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="need-about">Additional Details</label>
                     <textarea id="need-about" rows="4" placeholder="Anything else property owners should know..."></textarea>
                 </div>
-
                 <button type="submit" class="btn btn-primary btn-full">Post My Need</button>
             </form>
         </div>
@@ -264,67 +386,34 @@
         <div class="form-container">
             <h2>List Your Property</h2>
             <p class="form-subtitle">Going abroad or have a spare room? List it and get matched with tenants.</p>
-
             <form id="property-form" onsubmit="submitProperty(event)">
                 <div class="form-group">
                     <label>Listing Type</label>
                     <div class="toggle-group">
-                        <button type="button" class="toggle-btn active" id="prop-type-temp" onclick="setPropType('temporary', this)">
-                            Temporary Sublet
-                        </button>
-                        <button type="button" class="toggle-btn" id="prop-type-perm" onclick="setPropType('permanent', this)">
-                            Permanent Rental
-                        </button>
+                        <button type="button" class="toggle-btn active" id="prop-type-temp" onclick="setPropType('temporary', this)">Temporary Sublet</button>
+                        <button type="button" class="toggle-btn" id="prop-type-perm" onclick="setPropType('permanent', this)">Permanent Rental</button>
                     </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="prop-title">Listing Title *</label>
-                    <input type="text" id="prop-title" required placeholder="e.g. Bright 1-bed in Rathmines - available July/Aug">
-                </div>
-
+                <div class="form-group"><label for="prop-title">Listing Title *</label><input type="text" id="prop-title" required placeholder="e.g. Bright 1-bed in Rathmines - available July/Aug"></div>
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="prop-address">Full Address *</label>
-                        <input type="text" id="prop-address" required placeholder="123 Main Street">
-                    </div>
-                    <div class="form-group">
-                        <label for="prop-area">Area *</label>
-                        <input type="text" id="prop-area" required placeholder="e.g. Rathmines, Dublin 6">
-                    </div>
+                    <div class="form-group"><label for="prop-address">Full Address *</label><input type="text" id="prop-address" required placeholder="123 Main Street"></div>
+                    <div class="form-group"><label for="prop-area">Area *</label><input type="text" id="prop-area" required placeholder="e.g. Rathmines, Dublin 6"></div>
                 </div>
-
                 <div class="form-row">
                     <div class="form-group">
                         <label for="prop-room-type">Room Type *</label>
                         <select id="prop-room-type" required>
-                            <option value="">Select...</option>
-                            <option value="single-room">Single Room</option>
-                            <option value="double-room">Double Room</option>
-                            <option value="studio">Studio</option>
-                            <option value="1bed-apartment">1 Bed Apartment</option>
-                            <option value="2bed-apartment">2 Bed Apartment</option>
-                            <option value="house">Entire House</option>
+                            <option value="">Select...</option><option value="single-room">Single Room</option><option value="double-room">Double Room</option>
+                            <option value="studio">Studio</option><option value="1bed-apartment">1 Bed Apartment</option>
+                            <option value="2bed-apartment">2 Bed Apartment</option><option value="house">Entire House</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="prop-rent">Monthly Rent (&euro;) *</label>
-                        <input type="number" id="prop-rent" required min="0" placeholder="1200">
-                    </div>
+                    <div class="form-group"><label for="prop-rent">Monthly Rent (&euro;) *</label><input type="number" id="prop-rent" required min="0" placeholder="1200"></div>
                 </div>
-
                 <div class="form-row">
-                    <div class="form-group">
-                        <label for="prop-from">Available From *</label>
-                        <input type="date" id="prop-from" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="prop-to">Available Until</label>
-                        <input type="date" id="prop-to">
-                        <small>Leave blank for permanent</small>
-                    </div>
+                    <div class="form-group"><label for="prop-from">Available From *</label><input type="date" id="prop-from" required></div>
+                    <div class="form-group"><label for="prop-to">Available Until</label><input type="date" id="prop-to"><small>Leave blank for permanent</small></div>
                 </div>
-
                 <div class="form-group">
                     <label>Amenities</label>
                     <div class="checkbox-group">
@@ -336,29 +425,21 @@
                         <label class="checkbox-label"><input type="checkbox" id="prop-transport"> Near Transport</label>
                     </div>
                 </div>
-
-                <!-- RTB Section -->
                 <div id="rtb-section" class="rtb-box" style="display:none;">
                     <h3>RTB Registration (Required for Permanent Rentals)</h3>
-                    <p>Under Irish law, all private residential tenancies must be registered with the
-                       Residential Tenancies Board (RTB) within one month of commencement.</p>
+                    <p>Under Irish law, all private residential tenancies must be registered with the Residential Tenancies Board (RTB) within one month of commencement. You cannot list a permanent rental without RTB registration.</p>
                     <div class="form-group">
-                        <label class="checkbox-label">
-                            <input type="checkbox" id="prop-rtb" onchange="toggleRtbNumber()">
-                            My property is RTB registered
-                        </label>
+                        <label class="checkbox-label"><input type="checkbox" id="prop-rtb" onchange="toggleRtbNumber()"> My property is RTB registered</label>
                     </div>
                     <div class="form-group" id="rtb-number-group" style="display:none;">
                         <label for="prop-rtb-number">RTB Registration Number</label>
                         <input type="text" id="prop-rtb-number" placeholder="RT12345">
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label for="prop-description">Description</label>
                     <textarea id="prop-description" rows="4" placeholder="Describe your property &mdash; layout, neighbourhood, transport links, house rules..."></textarea>
                 </div>
-
                 <button type="submit" class="btn btn-primary btn-full">List Property</button>
             </form>
         </div>
@@ -369,34 +450,12 @@
         <div class="browse-container">
             <h2>People Looking for a Place</h2>
             <p class="form-subtitle">Browse tenant needs and offer your place if it's a match.</p>
-
             <div class="filters">
-                <div class="filter-group">
-                    <select id="filter-type" onchange="loadNeeds()">
-                        <option value="all">All Types</option>
-                        <option value="temporary">Temporary Only</option>
-                        <option value="permanent">Permanent Only</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <select id="filter-room" onchange="loadNeeds()">
-                        <option value="all">All Room Types</option>
-                        <option value="single-room">Single Room</option>
-                        <option value="double-room">Double Room</option>
-                        <option value="studio">Studio</option>
-                        <option value="1bed-apartment">1 Bed Apartment</option>
-                        <option value="2bed-apartment">2 Bed Apartment</option>
-                        <option value="house">Entire House</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <input type="text" id="filter-area" placeholder="Filter by area..." oninput="debounceLoadNeeds()">
-                </div>
-                <div class="filter-group">
-                    <input type="number" id="filter-budget" placeholder="Min budget &euro;" oninput="debounceLoadNeeds()">
-                </div>
+                <div class="filter-group"><select id="filter-type" onchange="loadNeeds()"><option value="all">All Types</option><option value="temporary">Temporary Only</option><option value="permanent">Permanent Only</option></select></div>
+                <div class="filter-group"><select id="filter-room" onchange="loadNeeds()"><option value="all">All Room Types</option><option value="single-room">Single Room</option><option value="double-room">Double Room</option><option value="studio">Studio</option><option value="1bed-apartment">1 Bed Apartment</option><option value="2bed-apartment">2 Bed Apartment</option><option value="house">Entire House</option></select></div>
+                <div class="filter-group"><input type="text" id="filter-area" placeholder="Filter by area..." oninput="debounceLoadNeeds()"></div>
+                <div class="filter-group"><input type="number" id="filter-budget" placeholder="Min budget &euro;" oninput="debounceLoadNeeds()"></div>
             </div>
-
             <div id="needs-list" class="needs-grid"></div>
             <div id="no-needs" class="empty-state" style="display:none;">
                 <div class="empty-icon">&#128193;</div>
@@ -410,32 +469,20 @@
     <section id="page-dashboard" class="page">
         <div class="browse-container">
             <h2>My Dashboard</h2>
-
-            <!-- My Needs -->
             <div class="dashboard-section">
                 <h3>My Accommodation Needs</h3>
                 <div id="my-needs-list" class="needs-grid"></div>
-                <div id="no-my-needs" class="empty-state-sm" style="display:none;">
-                    <p>No needs posted yet. <a href="#" onclick="showPage('post-need')">Post one now</a></p>
-                </div>
+                <div id="no-my-needs" class="empty-state-sm" style="display:none;"><p>No needs posted yet. <a href="#" onclick="showPage('post-need')">Post one now</a></p></div>
             </div>
-
-            <!-- My Properties -->
             <div class="dashboard-section">
                 <h3>My Properties</h3>
                 <div id="my-properties-list" class="needs-grid"></div>
-                <div id="no-my-properties" class="empty-state-sm" style="display:none;">
-                    <p>No properties listed. <a href="#" onclick="showPage('list-property')">List one now</a></p>
-                </div>
+                <div id="no-my-properties" class="empty-state-sm" style="display:none;"><p>No properties listed. <a href="#" onclick="showPage('list-property')">List one now</a></p></div>
             </div>
-
-            <!-- My Offers Made -->
             <div class="dashboard-section">
                 <h3>My Offers Sent</h3>
                 <div id="my-offers-list" class="needs-grid"></div>
-                <div id="no-my-offers" class="empty-state-sm" style="display:none;">
-                    <p>No offers sent yet. <a href="#" onclick="showPage('browse-needs')">Browse tenant needs</a></p>
-                </div>
+                <div id="no-my-offers" class="empty-state-sm" style="display:none;"><p>No offers sent yet. <a href="#" onclick="showPage('browse-needs')">Browse tenant needs</a></p></div>
             </div>
         </div>
     </section>
@@ -464,27 +511,19 @@
             <p id="offer-to-name" class="form-subtitle"></p>
             <form onsubmit="submitOffer(event)">
                 <input type="hidden" id="offer-need-id">
-                <div class="form-group">
-                    <label for="offer-rent">Monthly Rent You're Offering (&euro;) *</label>
-                    <input type="number" id="offer-rent" required min="0">
-                </div>
-                <div class="form-group">
-                    <label for="offer-message">Message to Tenant</label>
-                    <textarea id="offer-message" rows="4" placeholder="Describe your property, its location, amenities, and why it's a good fit..."></textarea>
-                </div>
+                <div class="form-group"><label for="offer-rent">Monthly Rent You're Offering (&euro;) *</label><input type="number" id="offer-rent" required min="0"></div>
+                <div class="form-group"><label for="offer-message">Message to Tenant</label><textarea id="offer-message" rows="4" placeholder="Describe your property, its location, amenities, and why it's a good fit..."></textarea></div>
                 <button type="submit" class="btn btn-primary btn-full">Send Offer</button>
             </form>
         </div>
     </div>
 
     <!-- Toast -->
-    <div id="toast" class="toast" style="display:none;">
-        <span id="toast-message"></span>
-    </div>
+    <div id="toast" class="toast" style="display:none;"><span id="toast-message"></span></div>
 
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2026 NestSeek. Built for Dublin renters.</p>
+            <p>&copy; 2026 NestSeek (Beta). Built for Dublin renters.</p>
             <p class="footer-tagline">Stop searching. Start finding.</p>
         </div>
     </footer>
