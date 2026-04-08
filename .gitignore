@@ -1,0 +1,5 @@
+node_modules/
+.env
+nestseek.db
+nestseek.db-shm
+nestseek.db-wal
